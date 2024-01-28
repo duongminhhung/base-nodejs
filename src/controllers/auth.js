@@ -1,7 +1,14 @@
 import * as services from "../services"
 export const register = async (req,res) => {
     try{
-        const data = await services.register()
+        const {email,password}  = req.body
+        if(!email || !password){
+            return res.status(400).json({
+                error: 1,
+                mes: 'Missing payloads'
+            })
+        }
+        const data = await services.register(email,password)
         return res.json({
             result : data
         })
