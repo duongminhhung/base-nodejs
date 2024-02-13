@@ -6,7 +6,9 @@ const initRoutes = (app) => {
     app.use('/api/v1/auth',auth)
 
     return app.use('/', (req,res) =>{
-        return res.send('Hello');
+        return res.json({
+            'message' : 'Path not found'
+        })
     })
 }
 module.exports = initRoutes

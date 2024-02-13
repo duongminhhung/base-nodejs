@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended:true}))
 
 initRoutes(app)
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8008;
 
 const listener = app.listen(PORT,()=>{
     console.log('Running port ' + listener.address().port );
